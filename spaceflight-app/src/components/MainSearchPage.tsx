@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ListGroup, Button } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
+import SingleArticle from "./SingleArticle";
 
 interface article {
   events: any[];
@@ -43,17 +44,7 @@ const MainSearchPage = () => {
     <div className="container">
       <ListGroup className="row  d-flex">
         {articles.map((article) => (
-          <ListGroup.Item key={article.id} className="col xs={4}">
-            <h3 className="w-50 p-2 align-items-c">{article.title}</h3>
-            <img
-              alt={article.title}
-              src={article.imageUrl}
-              className="w-50 p-2"
-            />
-            <div>
-              <Button>read more</Button>
-            </div>
-          </ListGroup.Item>
+          <SingleArticle article={article} />
         ))}
       </ListGroup>
     </div>
