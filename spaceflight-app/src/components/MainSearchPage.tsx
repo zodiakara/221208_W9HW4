@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ListGroup } from "react-bootstrap";
 import SingleArticle from "./SingleArticle";
+import { ListGroup } from "react-bootstrap";
 
 interface article {
   events: any[];
@@ -41,13 +41,13 @@ const MainSearchPage = () => {
     }
   };
   return (
-    <div className="container">
-      <ListGroup className="row  d-flex">
+    <ListGroup className="container d-flex">
+      <div className="row">
         {articles.map((article) => (
           <SingleArticle article={article} />
         ))}
-      </ListGroup>
-    </div>
+      </div>
+    </ListGroup>
   );
 };
 
